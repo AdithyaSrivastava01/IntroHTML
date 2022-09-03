@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="forms.css" rel="stylesheet">
+    <title>Forms</title>
+</head>
+<body>
+    <a href="index1.html">Back to index</a>
+    <h1>HTML FORMS</h1>
+
+    <form>
+<label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Type here">
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Type here">
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Type here" maxlength="4" >
+
+        <!-- input tag has no closing tag -->
+        <!-- the type="something" gives a Browser the type of info being sent to it checks whether it is vaid email entry or not etc. -->
+<!-- label is the text which is written next to the form input field and placeholder is the text written within the input field -->
+<!-- label tag is completely different and it identifies the input fiels using ids and ids can also be used to style forms or JS elements   -->
+<!-- the name attribute is used to identify the form in the server side and id attribute is used to identify the form in the front end -->
+
+<p><strong>Select your age</strong></p>
+  
+<input type="radio"name="age" id="opt-1" value="0-25">
+<label for="opt-1">0-25</label>  
+   
+<input type="radio"name="age" id="opt-2" value="25-50"> 
+<label for="opt-2">25-50</label>
+  
+<input type="radio"name="age" id="opt-3",value="51+"> 
+<label for="opt-3">51+</label> 
+<!-- in radio type of input fields we can have different ids for front end identification but to associate each input with one another we  -->
+<!-- need to have the same name attribute, the value attribute will pass on the the value as name:value to the server side when the client submits the form  -->
+<!-- for multiple options we can can gave name attribute as different so then the input fields will no longer be same -->
+<br><br>
+<p>Dropdown</p>
+<label for="President">Favorite President</label>
+<select name="President" id="President">
+    <option selected>choose</option>
+<option value="op1">Trump</option>
+<option value="op2">Biden</option>
+</select>
+<br><br><br>
+<!-- the select provides us with dropdown with which we can choose the options.The select has name attribute to identify with servers and id to identify in the frontend  the option tag is gonna have the value which will be passed on to the server -->
+<!-- By default if want an option to be selected already when the user renders the page we use an attribute called selected the option by default will be selected and will not contain any value -->
+<!-- disabled will disable any type of input field  -->
+<input type="submit" value="Submit the form">
+<!-- the required field works only on inputs not on select and the user has to enter the field to submit the form  -->
+<!-- the type = submit will create a button and the text on the button will come from the value attribute -->
+<!-- type = checkbox would create a checkbox area instead of radio button and inline makes sure the option are in single line -->
+<br><br><br>
+<label for="area">Your Bio</label>
+<br><br>
+<textarea id="area" name="area" placeholder="Type here"></textarea>
+<!-- these are huge text input fields and can be expanded too -->
+<!-- in input fields we can have maxlength which restrict the user from entering extra info -->
+<!-- the action attribute of the form will pass on the data to the server of whatever user has inputed -->
+</form>
+</body>
+</html>

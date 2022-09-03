@@ -1,0 +1,56 @@
+/*The stylesheets have selectors and declarations.h1 is the selector
+ and the content inside is the declaration  */
+
+h1{
+    color:red;
+    background-color: orange;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration:  underline blue;
+    /* text-decorate can give underline etc.give the color of the line and specify underline  */
+    text-align: center;
+    
+}
+p{
+    color:olive;
+}
+#id1{
+color:red;
+display:inline-block;
+/* if we want the text to be displayed in newspaper format */
+line-height: 30px;
+/* gives the spacing between the lines */
+letter-spacing: 6px;
+column-count: 3;
+/* divides the para into three col */
+column-gap: 40px;
+/* gap between the column */
+border-left:4px dotted blue;
+/* three args required one is the pixels of the border the type like dashed dotted or solid and the color of the border */
+/* border-left implies the border is created on the left side of the block element */
+border-right: 2px dashed burlywood;
+
+
+}
+/* this will go to the class of mine and the li elements */
+ul.mine{
+    /* display:inline-block; */
+    list-style-type: none;
+    /* the none will remove the dots */
+}
+/*
+Inline elements like anchor tag, the span, img or strong or i tag they all are inline
+They do not take up any more room than their content needs
+
+Block-level elemnts
+p,div,h1,h2 ,ul,ol,li they all are block level elemnts 
+They take up the whole width of the page regardless of the content
+*/
+/* 
+to convert a block level to inline we select the block level element and
+display:inline;
+but when we appy padding to these elements the inline element's padding collapses and the elements 
+are stack on one another but not in case of block level elements.
+To get the best of the two we can use display:inline-block;
+
+*/

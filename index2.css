@@ -1,0 +1,48 @@
+/* p.success{
+    color:red;
+     column-count: 3;
+    /* column-gap: 20px;} */ 
+
+
+/* p.success.feedback{
+    color:blue;
+    border:2px dashed red;
+    text-align: center;
+    margin:20px;
+    padding: 10px;
+    
+} */
+/* a class can have two names and this the example of calss inheritance */
+/* the class success the column count is inherited in the class success.feedback therefore */
+/* the success the parent class and feedback is the derived class column count is the method which is inherited in feedback class. */
+/* p.success.feedback.check{
+    color:green;
+
+    
+} */ 
+
+/* all ids in a HTML page must be unique but we can multiple classes with same name which we use to acheive inheritance */
+/* better to use ids for JS and classes as CSS hooks a good practice */
+
+/* div p.success.feedback.check{
+    color:blue;
+}
+div p.success{
+    color:red;
+} */
+/* div p.success means within the <div> element go to the <p> element and access the success class which also acts as a super parent class to other <p> elements*/
+/* a[href*="index"]{
+    color:brown;
+    text-decoration: none;
+    /* no underline required */
+    /* background-color: silver;} */
+
+/* the href*=index means in any anchor tag in the href attribute if there is a keyword "index" it will perform all the styles 
+to that anchor tags */
+
+/* span.spancheck{
+    color:red;
+    background-color: black;
+    text-decoration: brown underline;
+} */
+/* we can sassign a class or an id to the span inline element and access them in JS or CSS */

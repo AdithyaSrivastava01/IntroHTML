@@ -1,0 +1,305 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+header{
+    background-color:orangered;
+    position:fixed;
+    z-index: 1;
+    padding:20px;
+    top:0;
+    left:0;
+    width:100%;
+    text-align: center;
+
+}
+/* as the header is fixed and the img is relative hence a z index is required 
+to make it visible  
+The z-index property specifies the stack order of an element.
+If z-index is not mentioned then the absolute element doesnt passes under the header.As the Stack index
+of the absolute element .intro is higher than header as it has inherited this index in the parent element in the banner.
+This index given to the .intro element is in the banner and the browser understands it has a higher index than header
+hence an external mention of zindex is required to make sure the .intro element hides into the header after scrolling.
+*/
+header h1{
+    color:white;
+    padding: 6px 10px;
+    border:10px solid white;
+    display:inline-block;
+    border-radius: 50px;
+}
+/* we made it inline block to achieve a proper border or else in a block element the border is in full width */
+/* .banner{
+    position: relative;
+} */
+
+.banner img{
+    width: 100%;
+    image-resolution: from-image 300dpi;
+    
+}
+/* to make the image in 100% width */
+.poster img{
+    width: 100%;
+    image-resolution: from-image 300dpi;
+}
+.banner .intro{
+    position:absolute;
+    padding: 20px;
+    left:5%;
+    top:40%;
+    height: 110px;
+    text-align: center;
+    color:white;
+    background-color:orange ;
+    
+/* transform: translate(110%, -50%); */
+    
+
+}
+/* If we want an element to be inside an parent element and it doesnt follow the stack display order then the 
+absolute position is required and it positions itself wrt the parent element. */
+.banner .intro span{
+    color:red;
+}
+/* the parent element which is in this case the banner is in relative and intro is in the absolute */
+/* there w.r.t the parent element the intro will not change its position 
+ arent element can change its size while changing the size of the screen */
+ .nav-bar{
+     background-color:seashell;
+     padding: 20px;
+     position:sticky;
+     top:148px;
+
+ }
+ /* the sticky position is mix of static and relative when we rach the scroll of 148px from the top we 
+ make the navbar fixed to achieve this the nav should be a separate element not inside any div  */
+ .nav-bar ul{
+     white-space: nowrap;
+ }
+ /* nowrap will make all whitespace into single whitspace and the text wont wrap to the other line until br is encountered  */
+ .nav-bar li{
+     display:inline-block;
+     width:25%;
+     font-size:20px;
+ }
+ 
+.nav-bar li a{
+    color:black;
+    text-decoration: none;
+    
+}
+.nav-bar li select{
+    background-color: seashell;
+    color:black;
+    border:none;
+    font-size:larger;
+}
+.nav-bar li select option{
+    background-color: white;
+    color:black;
+}
+article{
+    margin:30px;
+    padding:20px;
+}
+article h2{
+    text-align:center;
+    font-size:xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    color:steelblue;
+
+}
+article p{
+    line-height: 30px;
+    column-count: 2;
+    color:seagreen
+}
+.poster ul{
+    list-style-type: none;
+    margin:20px;
+    padding:20px;
+}
+.poster ul li{
+    display: inline-block;
+    width:40%;
+    margin:20px;
+    padding:20px;
+}
+.poster li img{
+    width:100%
+}
+.poster p{
+    line-height: 30px;
+    column-count: 2;
+    color:seagreen;
+    margin:30px;
+    padding:20px;
+
+}
+/* to align items use text-align:center */
+
+footer{
+    
+    text-align:center;
+    color:white;
+    background-color: orangered;
+    height:100%;
+    padding: 10px;
+    
+    font-size:xx-larger;
+}
+/* header and footer do not require margin as it would leave empty spaces */
+.form-in{
+    padding:40px;
+    text-align: center;
+    background-color:rgb(233, 229, 229);
+    
+}
+.form-in h3{
+font-size: xx-large;
+}
+
+.form-in input{
+    border-radius:10px;
+    height: 30px;
+    width:30%;
+    
+    
+}
+/* .form-in #submit{
+width:100px;
+background-color: blue;
+color:white;
+text-align: center;
+margin:10px;
+} */
+
+/* pseudo classes */
+.nav-bar li a:hover{
+    color:red;
+}
+.nav-bar li select:hover{
+    color:red;
+}
+/* pseudo classes like hover or valid start with :hover and under the style we choose 
+want we want to perform when the mouse points to it or when we enter valid info in case of :valid */
+.for-in input:valid{
+    border: 5px solid green ;
+}
+.poster ul li img:hover{
+position:relative;
+top:-5px;}
+/* the image will be displaced from 5px towards the topwhen the pointer is on it.
+the position is always relative as the image dy default is static. */
+
+/* if we want to write a text on the image the container that contains the image must be relative and the text must be
+ absolute An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+
+However; if an absolute positioned element has no positioned ancestors, 
+it uses the document body, and moves along with page scrolling. */
+
+
+/* Media queries */
+@media screen and (max-width: 900px){
+    header{
+        position:relative;
+    }
+    .banner{
+        position: static;
+    }
+    .banner .intro{
+        position:absolute;
+        padding: 20px;
+        left:0%;
+        top:30%;
+        height: 110px;
+        text-align: center;
+        color:white;
+        background-color:orange ;
+        
+    /* transform: translate(110%, -50%); */
+        
+    
+    }
+    .nav-bar{
+        background-color:seashell;
+        padding: 20px;
+        position:sticky;
+        top:0px;
+   
+    }
+
+}
+
+@media screen and (max-width:580px){
+    .banner .intro h1{
+        font-size:12px
+
+    }
+    .banner .intro{
+        padding:0px;
+        /* margin:0px;
+        top:0px; */
+
+        width:20%;
+        height:5%;
+    }
+    .nav-bar a{
+        font-size:13px;
+
+    }
+    .nav-bar .dropdown{
+        font-size:13px;
+        
+    }
+}
+@media screen and (max-width:380px){
+    .banner .intro h1{
+        font-size:17px;
+        
+
+    }
+    .banner .intro{
+       
+        /* margin:0px;
+        top:0px; */
+
+        width:45%;
+        height:15%;
+        top:30%;
+    }
+    .nav-bar a{
+        font-size:10px;
+
+    }
+    .nav-bar .dropdown{
+        font-size:10px;
+        
+    }
+    .banner img{
+        width: 100%;
+        align-items: center;
+        image-resolution: from-image 300dpi;
+        
+    }
+}
+
+/* for the responsive design we need to add @media screen and (max-width or min-width){
+    and write the CSS code here.
+} */
+
+.form-in label{
+padding:10px;
+text-align: center;
+
+}
+.form-in #submit{
+    padding:0px;
+    margin:30px;
+    text-align: centre;
+    width:8%;
+    background-color: rgb(30, 136, 223);
+    color:white;
+}
